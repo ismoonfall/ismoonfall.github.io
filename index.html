@@ -249,51 +249,66 @@
  
   <!-- skill section -->
 
-  <section class="skill_section layout_padding2">
-    <div class="container">
-      <div class="custom_heading-container">
-        <h2>
-          Habilidades
-        </h2>
-      </div>
-      <div class="skill_padding">
-        <div class="row">
-          <div class="col-md-3 col-sm-6">
-            <div class="box">
-              <div class="circle" id="circles-1"></div>
-              <h6>
-                Adobe Photoshop
-              </h6>
-            </div>
+<section class="skill_section layout_padding2">
+  <div class="container">
+    <div class="custom_heading-container">
+      <h2>Habilidades</h2>
+    </div>
+    <div class="skill_padding">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="box">
+            <div class="circle" id="circles-1"></div>
+            <h6>Adobe Photoshop</h6>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="box">
-              <div class="circle" id="circles-1"></div>
-              <h6>
-                Adobe Ilustrator
-              </h6>
-            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="box">
+            <div class="circle" id="circles-2"></div>
+            <h6>Adobe Illustrator</h6>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="box">
-              <div class="circle" id="circles-1"></div>
-              <h6>
-                Clip Studio
-              </h6>
-            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="box">
+            <div class="circle" id="circles-3"></div>
+            <h6>Clip Studio</h6>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="box">
-              <div class="circle" id="circles-4"></div>
-              <h6>
-                Procreate
-              </h6>
-            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="box">
+            <div class="circle" id="circles-4"></div>
+            <h6>Procreate</h6>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  // Inicializa los valores que quieres en el círculo 1 y aplícalo a los otros círculos
+  var commonConfig = {
+    id: 'circles-1',
+    radius: 60,
+    value: 85,
+    maxValue: 100,
+    width: 10,
+    text: function (value) {
+      return value + '%';
+    },
+    colors: ['#ddd', '#ff5252'],
+    duration: 400
+  };
+
+  // Inicializa el círculo 1
+  Circles.create(commonConfig);
+
+  // Duplica la configuración para los otros círculos cambiando solo el ID y reutilizando el valor de circles-1
+  var circle2 = Circles.create({ ...commonConfig, id: 'circles-2' });
+  var circle3 = Circles.create({ ...commonConfig, id: 'circles-3' });
+  var circle4 = Circles.create({ ...commonConfig, id: 'circles-4' });
+</script>
+
 
   <!-- end skill section -->
 
